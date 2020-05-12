@@ -1,27 +1,60 @@
-<h1>{{title}}</h1>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-<a class="navbar-brand" href="https://braininghub.hu/">
+    {{!-- <a class="navbar-brand" href="https://braininghub.hu/">
             <img src="images/BH_logo.png" alt="BN_logo" title="BH_logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link text-white rolling" href="#kezdooldal">Kezdőoldal <span
-                            class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white rolling" href="#rolunk">Rólunk</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white rolling" href="#projektjeink">Projektjeink</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white rolling" href="#kapcsolat">Kapcsolat</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        </a> --}}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link text-white rolling" href="#topScores">Top scores<span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white rolling" href="#signUp">Sign up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white rolling" href="#signIn">Sign in</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <h1>{{title}}</h1>
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nickname</th>
+                <th scope="col">Game</th>
+                <th scope="col">Top score</th>
+                <th scope="col">Number of round</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@mdo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

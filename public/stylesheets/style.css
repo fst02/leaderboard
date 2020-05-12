@@ -1,17 +1,26 @@
+:root{
+  --nav-bg-color: rgb(153, 153, 153);
+  --article-bg-color: lightgray;
+  --li-bg-color: rgb(105, 103, 103);
+}
+
 body {
-  padding: 50px;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
-nav, div#toTop {
-  background-color: var(--nav-bg-color);
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px gray;
 }
 
-div#toTop {
-  border: solid 2px white;
+nav {
+  background-color: var(--nav-bg-color);
 }
 
 ul.navbar-nav {
