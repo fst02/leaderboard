@@ -6,3 +6,52 @@ body {
 a {
   color: #00B7FF;
 }
+nav, div#toTop {
+  background-color: var(--nav-bg-color);
+}
+
+div#toTop {
+  border: solid 2px white;
+}
+
+ul.navbar-nav {
+  justify-content: center;
+}
+
+a.navbar-brand > img {
+  height: 70px;
+}
+
+li.nav-item > a.active {
+  background-clip: border-box;
+  background-color: var(--li-bg-color)!important;
+}
+
+li:hover {
+  background-color: var(--li-bg-color);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  border: 1px solid white;
+  margin: 20px;
+  display: inline-block;
+}
+
+a.nav-link {
+  padding: 15px;
+  width: 150px;
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
