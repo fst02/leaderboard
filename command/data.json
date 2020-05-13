@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Józsi",
+    "game": "Mario",
+    "topScore": 100,
+    "numberOfRounds": 20
+  },
+  {
+    "name": "Sanyi",
+    "game": "Hangman",
+    "topScore": 10,
+    "numberOfRounds": 200
+  },
+  {
+    "name": "Peti",
+    "game": "Tetris",
+    "topScore": 13,
+    "numberOfRounds": 13
+  },
+  {
+    "name": "Juli",
+    "game": "Mario",
+    "topScore": 420,
+    "numberOfRounds": 1
+  },
+  {
+    "name": "Vero",
+    "game": "Tetris",
+    "topScore": 8,
+    "numberOfRounds": 42
+  },
+  {
+    "name": "Eszter",
+    "game": "Hangman",
+    "topScore": 21,
+    "numberOfRounds": 13
+  },
+  {
+    "name": "Irénke",
+    "game": "Mario",
+    "topScore": 7,
+    "numberOfRounds": 1200
+  },
+  {
+    "name": "Vali",
+    "game": "Tetris",
+    "topScore": 42,
+    "numberOfRounds": 420
+  },
+  {
+    "name": "Józsi",
+    "game": "Mario",
+    "topScore": 100,
+    "numberOfRounds": 20
+  },
+  {
+    "name": "Józsi",
+    "game": "Mario",
+    "topScore": 100,
+    "numberOfRounds": 20
+  }
+]
