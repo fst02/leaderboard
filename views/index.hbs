@@ -27,22 +27,38 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nickname</th>
-                <th scope="col">Game</th>
-                <th scope="col">Top score</th>
-                <th scope="col">Number of round</th>
+                <th scope="col">
+                    Nickname
+                    <a href="http://fullstack.braininghub.com:3000?orderByColumn=name&order=desc">↓</a>
+                    <a href="http://fullstack.braininghub.com:3000?orderByColumn=name&order=asc">↑</a>
+                </th>
+                <th scope="col">
+                    Game
+                    <a href="http://fullstack.braininghub.com:3000?orderByColumn=game&order=desc">↓</a>
+                    <a href="http://fullstack.braininghub.com:3000?orderByColumn=game&order=asc">↑</a>
+                </th>
+                <th scope="col">
+                    Top score
+                    <a href="http://fullstack.braininghub.com:3000?orderByColumn=topScore&order=desc">↓</a>
+                    <a href="http://fullstack.braininghub.com:3000?orderByColumn=topScore&order=asc">↑</a>
+                </th>
+                <th scope="col">
+                    Number of rounds
+                    <a href="http://fullstack.braininghub.com:3000?orderByColumn=numberOfRounds&order=desc">↓</a>
+                    <a href="http://fullstack.braininghub.com:3000?orderByColumn=numberOfRounds&order=asc">↑</a>
+                </th>
             </tr>
         </thead>
         <tbody>
             {{#each scoreboard}}
-            <tr>                
-                <th scope="row">{{@index}}</th>                
-                <td>{{this.name}}</td>                
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.name}}</td>
                 <td>{{this.game}}</td>
                 <td>{{this.topScore}}</td>
                 <td>{{this.numberOfRounds}}</td>
             </tr>
-            {{/each}}            
+            {{/each}}
         </tbody>
     </table>
 </div>

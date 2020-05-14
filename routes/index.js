@@ -6,7 +6,9 @@ const scoreboard = selectScoreboard;
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  scoreboard.then((data) => {
+  const orderBy = req.query.orderByColumn;
+  const order = req.query.order;
+  scoreboard.selectScoreboard(orderBy, order).then((data) => {
     res.render('index', { title: 'Leaderboard', scoreboard: data });
   });
 });
