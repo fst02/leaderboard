@@ -8,7 +8,8 @@ const scoreboard = selectScoreboard;
 router.get('/', (req, res) => {
   const orderBy = req.query.orderByColumn;
   const order = req.query.order;
-  scoreboard.selectScoreboard(orderBy, order).then((data) => {
+  const game = req.query.game;
+  scoreboard.selectScoreboard(orderBy, order, game).then((data) => {
     res.render('index', { title: 'Leaderboard', scoreboard: data });
   });
 });
