@@ -24,10 +24,12 @@
 <div class="container">
     <h1>{{title}}</h1>
     <form>
-        <select name="game">
-            <option value="Hangman">Hangman</option>
-            <option value="Tetris">Tetris</option>
-            <option value="Mario">Mario</option>
+        <select name="game">            
+            <option value="All" {{#ifeq game "All"}} selected {{/ifeq}}>All</option>             
+            <option value="Hangman" {{#ifeq game "Hangman"}} selected {{/ifeq}}>Hangman</option>
+            <option value="Tetris" {{#ifeq game "Tetris"}} selected {{/ifeq}}>Tetris</option>
+            <option value="Mario" {{#ifeq game "Mario"}} selected {{/ifeq}}>Mario</option>
+           
         </select>
         <input type="submit" value="mehet"/>
     </form>    

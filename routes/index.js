@@ -2,6 +2,7 @@ const express = require('express');
 const selectScoreboard = require('../command/select.js');
 
 const router = express.Router();
+
 const scoreboard = selectScoreboard;
 
 /* GET home page. */
