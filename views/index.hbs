@@ -69,4 +69,20 @@
             {{/each}}
         </tbody>
     </table>
+    <form id="signUp" method="POST">
+        <label for="nickname">Nickname</label>
+        <input type="text" name="nickname" id="nickname" placeholder="Enter name" required><br>
+        <label for="email">email</label>
+        <input type="email" name="email" id="email" placeholder="Enter email" required><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter password" required><br>
+        <label for="passwordRepeat">re-Password</label>
+        <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repeat password" required><br>
+    </form>
+    <label for="imageUpload">Upload image (optional)</label>
+    <input form="signUp" type="file" id="imageUpload" placeholder="Avatar"><br>
+    <label for="introduction">Introduction (optional) </label><br>
+    <textarea form="signUp" name="introduction" id="introduction" rows="5" cols="50">
+    </textarea><br>
+    <input form="signUp" type="submit" value="Submit">
 </div>

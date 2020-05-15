@@ -1,4 +1,4 @@
-const Scoreboard = require('./config_table.js');
+const Scoreboard = require('../model/scoreboard.js');
 const importData = require('./data.json');
 
 const seedScoreboard = async () => {
