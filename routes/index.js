@@ -1,6 +1,9 @@
 const express = require('express');
+const multer = require('multer');
 const selectScoreboard = require('../command/select.js');
 const UserController = require('../controller/UserController.js');
+
+const upload = multer({ dest: 'public/images/' });
 
 const targetUrl = '/';
 const router = express.Router();
@@ -16,12 +19,12 @@ router.get('/', (req, res) => {
     res.render('index', { title: 'Leaderboard', scoreboard: data });
   });
 });
-router.post('/register', async (req, res) => {
+router.post('/register', upload.single('imageUpload'), async (req, res) => {
   try {
-    await UserController.create(req.body);
+    const userData = Object.assign(req.body, { avatar: req.file.filename });
+    await UserController.create(userData);
     res.redirect(targetUrl);
   } catch (err) {
-    console.log(err);
     res.render('error', { validationError: err });
   }
 });

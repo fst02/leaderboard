@@ -35,6 +35,9 @@ const User = sequelize.define('users', {
   introduction: {
     type: Sequelize.TEXT,
   },
+  avatar: {
+    type: Sequelize.STRING,
+  },
 });
 
 module.exports = User;
