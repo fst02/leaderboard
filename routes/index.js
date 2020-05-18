@@ -21,7 +21,8 @@ router.post('/register', async (req, res) => {
     await UserController.create(req.body);
     res.redirect(targetUrl);
   } catch (err) {
-    res.render('error', { message: 'Username is already taken! :(' });
+    console.log(err);
+    res.render('error', { validationError: err });
   }
 });
 router.get('/register', (req, res) => {

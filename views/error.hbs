@@ -1,2 +1,7 @@
-<h1>{{message}}</h1>
+<h1>Validation Error</h1>
 
+<ul>
+    {{#each validationError.errors}}
+    <li>{{this.message}}</li>
+    {{/each}}
+</ul>
