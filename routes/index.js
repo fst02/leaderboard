@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     res.render('index', { title: 'Leaderboard', scoreboard: data });
   });
 });
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const userPostData = {
     nickname: req.body.nickname,
     email: req.body.email,
@@ -25,11 +25,14 @@ router.post('/', (req, res) => {
     introduction: req.body.introduction,
   };
   try {
-    userdata.postUser(userPostData);
+    await userdata.postUser(userPostData);
+    res.redirect(targetUrl);
   } catch (err) {
-    console.log('szomorú :(');
+    res.render('error', { message: 'Username is already taken! :(' });
   }
-  res.redirect(targetUrl);
+});
+router.get('/register', (req, res) => {
+  res.render('register');
 });
 
 

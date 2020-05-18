@@ -1,0 +1,30 @@
+<div class="container">
+  <form id="signUp" method="POST">
+    <div class="form-group">
+      <label for="nickname">Nickname</label>
+      <input type="text" class="form-control" id="nickname" placeholder="Enter nickname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+    </div>
+    <div class="form-group">
+      <label for="passwordRepeat">Repeat password</label>
+      <input type="password" class="form-control" id="passwordRepeat" placeholder="Repeat password" required>
+    </div>
+    <div class="form-group">
+      <label for="imageUpload">Upload image (optional)</label>
+      <input class="form-control" form="signUp" type="file" id="imageUpload">
+    </div>
+    <div class="form-group">
+      <label for="introduction">Introduction (optional) </label>
+      <textarea class="form-control" form="signUp" name="introduction" id="introduction" rows="5" cols="50">
+    </textarea><br>
+    <button form="signUp" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
