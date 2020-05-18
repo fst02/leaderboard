@@ -1,4 +1,4 @@
-const UserData = require('../model/userData.js');
+const UserData = require('../model/user.js');
 
 const createUserData = async () => {
   UserData.sync({ force: true });

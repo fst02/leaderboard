@@ -5,7 +5,7 @@ const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
   dialect: 'mysql',
 });
 
-const UserData = sequelize.define('userData', {
+const User = sequelize.define('users', {
   nickname: {
     type: Sequelize.STRING,
   },
@@ -20,4 +20,4 @@ const UserData = sequelize.define('userData', {
   },
 });
 
-module.exports = UserData;
+module.exports = User;

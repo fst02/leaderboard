@@ -1,11 +1,11 @@
 const express = require('express');
 const selectScoreboard = require('../command/select.js');
-const postUser = require('../command/post.js');
+const UserController = require('../controller/UserController.js');
+
 const targetUrl = '/';
 const router = express.Router();
 
 const scoreboard = selectScoreboard;
-const userdata = postUser;
 
 /* GET home page. */
 router.get('/', (req, res) => {
@@ -16,16 +16,9 @@ router.get('/', (req, res) => {
     res.render('index', { title: 'Leaderboard', scoreboard: data });
   });
 });
-router.post('/', async (req, res) => {
-  const userPostData = {
-    nickname: req.body.nickname,
-    email: req.body.email,
-    password: req.body.password,
-    passwordRepeat: req.body.passwordRepeat,
-    introduction: req.body.introduction,
-  };
+router.post('/register', async (req, res) => {
   try {
-    await userdata.postUser(userPostData);
+    await UserController.create(req.body);
     res.redirect(targetUrl);
   } catch (err) {
     res.render('error', { message: 'Username is already taken! :(' });
