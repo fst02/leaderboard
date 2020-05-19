@@ -1,14 +1,23 @@
 const User = require('../model/User');
 const MailerService = require('../service/MailerService');
+const cryptoRandomString = require('crypto-random-string');
 
 const targetUrl = '/';
+
+const token = cryptoRandomString({ length: 15, type: 'url-safe' });
 
 const create = async (userData) => {
   if (userData.password !== userData.passwordRepeat) {
     throw new Error('Passwords do not match');
   }
   await User.create(userData);
-  MailerService.send(userData.email, 'testsubject', 'testtext');
+  MailerService.send(
+    userData.email,
+    'Confirmation email',
+    `Let's confirm your email address.
+    Please finish your registration by clicking on the link below:
+    http://fullstack.braininghub.com:3000/${token}`,
+  );
 };
 
 const register = async (req, res) => {
