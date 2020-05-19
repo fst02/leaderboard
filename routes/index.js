@@ -21,10 +21,15 @@ router.get('/', (req, res) => {
 });
 router.post('/register', upload.single('imageUpload'), async (req, res) => {
   try {
-    const userData = Object.assign(req.body, { avatar: req.file.filename });
+    let filename = null;
+    if (req.file !== undefined) {
+      filename = req.file.filename;
+    }
+    const userData = Object.assign(req.body, { avatar: filename });
     await UserController.create(userData);
     res.redirect(targetUrl);
   } catch (err) {
+    console.log(err);
     res.render('error', { validationError: err });
   }
 });

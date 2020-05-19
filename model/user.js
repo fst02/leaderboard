@@ -34,9 +34,11 @@ const User = sequelize.define('users', {
   },
   introduction: {
     type: Sequelize.TEXT,
+    allowNull: true,
   },
   avatar: {
     type: Sequelize.STRING,
+    allowNull: true,
   },
 });
 
