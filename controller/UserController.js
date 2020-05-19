@@ -1,6 +1,7 @@
-const User = require('../model/User');
-const MailerService = require('../service/MailerService');
 const cryptoRandomString = require('crypto-random-string');
+const User = require('../models/User');
+const MailerService = require('../service/MailerService');
+const UserActivation = require('../models/UserActivation');
 
 const targetUrl = '/';
 
@@ -10,7 +11,10 @@ const create = async (userData) => {
   if (userData.password !== userData.passwordRepeat) {
     throw new Error('Passwords do not match');
   }
-  await User.create(userData);
+  const user = await User.create(userData);
+  const expiredAt = new Date();
+  expiredAt.setHours(expiredAt.getHours() + 24);
+  await UserActivation.create({ token, expiredAt, userId: user.id });
   MailerService.send(
     userData.email,
     'Confirmation email',

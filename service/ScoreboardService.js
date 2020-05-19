@@ -1,4 +1,4 @@
-const Scoreboard = require('../model/Scoreboard');
+const Scoreboard = require('../models/Scoreboard');
 
 const select = async (orderByColumn = 'topScore', order = 'DESC', game) => {
   const whereStatement = {};
