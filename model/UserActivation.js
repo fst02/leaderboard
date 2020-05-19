@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const User = require('./user');
+const User = require('./User');
 
 const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
   host: 'localhost',

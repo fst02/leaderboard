@@ -1,11 +1,14 @@
-const Scoreboard = require('../model/scoreboard.js');
+const Scoreboard = require('../model/Scoreboard');
 
-const selectScoreboard = async (orderByColumn = 'topScore', order = 'DESC', game) => {
+const select = async (orderByColumn = 'topScore', order = 'DESC', game) => {
   const whereStatement = {};
   if (game !== undefined && game !== 'All') {
     whereStatement.game = game;
   }
-  const results = await Scoreboard.findAll({ where: whereStatement, order: [[`${orderByColumn}`, `${order}`]] });
+  const results = await Scoreboard.findAll({
+    where: whereStatement,
+    order: [[orderByColumn, order]],
+  });
   const exportData = [];
   results.forEach((result) => {
     exportData.push({
@@ -20,5 +23,5 @@ const selectScoreboard = async (orderByColumn = 'topScore', order = 'DESC', game
 };
 
 module.exports = {
-  selectScoreboard: selectScoreboard,
+  select,
 };
