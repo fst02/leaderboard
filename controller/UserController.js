@@ -2,6 +2,7 @@ const cryptoRandomString = require('crypto-random-string');
 const User = require('../models/User');
 const MailerService = require('../service/MailerService');
 const UserActivation = require('../models/UserActivation');
+const ValidationService = require('../service/ValidationService');
 
 const targetUrl = '/';
 
@@ -20,7 +21,7 @@ const create = async (userData) => {
     'Confirmation email',
     `Let's confirm your email address.
     Please finish your registration by clicking on the link below:
-    http://fullstack.braininghub.com:3000/${token}`,
+    http://fullstack.braininghub.com:3000/verify?token=${token}`,
   );
 };
 
@@ -39,7 +40,21 @@ const register = async (req, res) => {
   }
 };
 
+const verify = async (req, res) => {
+  try {
+    const currentDate = new Date();
+    const result = await ValidationService.select(req.query.token);
+    if (result.length !== 0 && result[0].expiredAt >= currentDate) {
+      ValidationService.setToVerified(result[0].userId);
+    }
+    res.redirect(targetUrl);
+  } catch (err) {
+    console.log(`verify error: ${err}`);
+  }
+};
+
 module.exports = {
   create,
   register,
+  verify,
 };
