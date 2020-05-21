@@ -1,4 +1,5 @@
 const cryptoRandomString = require('crypto-random-string');
+const session = require('express-session');
 const User = require('../models/User');
 const MailerService = require('../service/MailerService');
 const UserActivation = require('../models/UserActivation');
@@ -53,8 +54,30 @@ const verify = async (req, res) => {
   }
 };
 
+const select = async (req, res) => {
+  try {
+    const results = await User.findAll({
+      where: { email: req.body.email, password: req.body.password },
+    });
+    if (results.length !== 0 && results[0].isVerified === true) {
+      req.session.loggedIn = true;
+      res.redirect(targetUrl);
+    }
+  } catch (err) {
+    console.log(`Login error: ${err}`);
+    res.send('Erre születni kell.');
+  }
+};
+
+const logOut = async (req, res) => {
+  req.session.loggedIn = false;
+  res.redirect(targetUrl);
+};
+
 module.exports = {
   create,
   register,
   verify,
+  select,
+  logOut,
 };
