@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="card card-default">
+      <div class="card-title">
+        <h4>My Profile</h4>
+      </div>
+      <div class="card-body row">
+        <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+          <img alt="User Pic" src="images/{{user.avatar}}" id="profile-image" class="rounded-circle img-responsive" width="200px"> 
+        </div>
+        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+          <div class="container">
+            <h2>{{user.nickname}}</h2>
+          </div>
+          <hr>
+          <ul class="container details">
+            <li>
+              <p><span class="fas fa-envelope" aria-hidden="true" style="width:50px;"></span>E-mail</p>
+              <p>{{user.email}}</p>
+            </li>
+            <li>
+              <p><span class="fas fa-info" aria-hidden="true" style="width:50px;"></span>Introduction</p>
+              <p>{{user.introduction}}</p>
+            </li>
+          </ul>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>

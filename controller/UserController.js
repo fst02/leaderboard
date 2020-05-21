@@ -54,13 +54,14 @@ const verify = async (req, res) => {
   }
 };
 
-const select = async (req, res) => {
+const logIn = async (req, res) => {
   try {
     const results = await User.findAll({
       where: { email: req.body.email, password: req.body.password },
     });
     if (results.length !== 0 && results[0].isVerified === true) {
       req.session.loggedIn = true;
+      req.session.userId = results[0].id;
       res.redirect(targetUrl);
     }
   } catch (err) {
@@ -74,10 +75,22 @@ const logOut = async (req, res) => {
   res.redirect(targetUrl);
 };
 
+const showUserProfile = async (req, res) => {
+  const results = await User.findAll({
+    where: { id: req.session.userId },
+  });
+  const loggedIn = req.session.loggedIn === true;
+  res.render('profile', {
+    loggedIn,
+    user: results[0],
+  });
+};
+
 module.exports = {
   create,
   register,
   verify,
-  select,
+  logIn,
   logOut,
+  showUserProfile,
 };

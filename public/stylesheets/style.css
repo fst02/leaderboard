@@ -36,7 +36,7 @@ li.nav-item > a.active {
   background-color: var(--li-bg-color)!important;
 }
 
-li:hover {
+nav li:hover {
   background-color: var(--li-bg-color);
 }
 

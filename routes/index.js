@@ -18,7 +18,8 @@ router.post('/register', upload.single('imageUpload'), UserController.register);
 router.get('/register', (req, res) => {
   res.render('register');
 });
-router.post('/', UserController.select);
+router.post('/', UserController.logIn);
 router.get('/logout', UserController.logOut);
+router.get('/myprofile', UserController.showUserProfile);
 
 module.exports = router;
