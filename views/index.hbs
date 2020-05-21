@@ -3,9 +3,9 @@
     <form>
         <select name="game" onchange="this.form.submit()">
             <option value="All">All</option>
-            <option value="Hangman">Hangman</option>
-            <option value="Tetris">Tetris</option>
-            <option value="Mario">Mario</option>
+            <option value="Hangman" {{selectedIfEqual game 'Hangman'}}>Hangman</option>
+            <option value="Tetris" {{selectedIfEqual game 'Tetris'}}>Tetris</option>
+            <option value="Mario" {{selectedIfEqual game 'Mario'}}>Mario</option>
         </select>
     </form>
     {{loggedIn}}
