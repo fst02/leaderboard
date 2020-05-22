@@ -1,0 +1,208 @@
+Fri, 22 May 2020 09:19:28 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:19:28 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+NotFoundError: Not Found
+    at /home/student/leaderboard/app.js:39:8
+    at Layer.handle [as handle_request] (/home/student/leaderboard/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/student/leaderboard/node_modules/express/lib/router/index.js:317:13)
+    at /home/student/leaderboard/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/student/leaderboard/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/student/leaderboard/node_modules/express/lib/router/index.js:275:10)
+    at /home/student/leaderboard/node_modules/express/lib/router/index.js:635:15
+    at next (/home/student/leaderboard/node_modules/express/lib/router/index.js:260:14)
+    at Immediate.<anonymous> (/home/student/leaderboard/node_modules/express-session/index.js:502:7)
+    at processImmediate (internal/timers.js:458:21)
+Fri, 22 May 2020 09:22:56 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:22:56 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+Fri, 22 May 2020 09:23:14 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:23:14 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+Fri, 22 May 2020 09:23:21 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:23:21 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+Fri, 22 May 2020 09:39:17 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:39:17 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+NotFoundError: Not Found
+    at /home/student/leaderboard/app.js:39:8
+    at Layer.handle [as handle_request] (/home/student/leaderboard/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/student/leaderboard/node_modules/express/lib/router/index.js:317:13)
+    at /home/student/leaderboard/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/student/leaderboard/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/student/leaderboard/node_modules/express/lib/router/index.js:275:10)
+    at /home/student/leaderboard/node_modules/express/lib/router/index.js:635:15
+    at next (/home/student/leaderboard/node_modules/express/lib/router/index.js:260:14)
+    at Immediate.<anonymous> (/home/student/leaderboard/node_modules/express-session/index.js:502:7)
+    at processImmediate (internal/timers.js:458:21)
+/home/student/leaderboard/controller/HomeController.js:11
+      game: ,
+            ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (internal/modules/cjs/loader.js:1063:16)
+    at Module._compile (internal/modules/cjs/loader.js:1111:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/routes/index.js:6:24)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/app.js:8:21)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/bin/www:7:11)
+Fri, 22 May 2020 09:41:46 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:41:46 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+Fri, 22 May 2020 09:41:47 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:41:47 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+/home/student/leaderboard/controller/HomeController.js:11
+      game: game?,
+                 ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (internal/modules/cjs/loader.js:1063:16)
+    at Module._compile (internal/modules/cjs/loader.js:1111:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/routes/index.js:6:24)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/app.js:8:21)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/bin/www:7:11)
+/home/student/leaderboard/controller/HomeController.js:11
+      game: game ? ,
+                   ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (internal/modules/cjs/loader.js:1063:16)
+    at Module._compile (internal/modules/cjs/loader.js:1111:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/routes/index.js:6:24)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/app.js:8:21)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/bin/www:7:11)
+/home/student/leaderboard/controller/HomeController.js:11
+      game: game ? game,
+                       ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (internal/modules/cjs/loader.js:1063:16)
+    at Module._compile (internal/modules/cjs/loader.js:1111:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/routes/index.js:6:24)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/app.js:8:21)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/bin/www:7:11)
+/home/student/leaderboard/controller/HomeController.js:11
+      game: game ? game : ,
+                          ^
+
+SyntaxError: Unexpected token ','
+    at wrapSafe (internal/modules/cjs/loader.js:1063:16)
+    at Module._compile (internal/modules/cjs/loader.js:1111:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/routes/index.js:6:24)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/app.js:8:21)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/bin/www:7:11)
+Fri, 22 May 2020 09:42:48 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:42:48 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+Fri, 22 May 2020 09:42:50 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 09:42:50 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+Fri, 22 May 2020 11:11:54 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 11:11:54 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+Fri, 22 May 2020 11:12:03 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 11:12:03 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12
+/home/student/leaderboard/controller/HomeController.js:11
+      game: game  'All',
+                  ^^^^^
+
+SyntaxError: Unexpected string
+    at wrapSafe (internal/modules/cjs/loader.js:1063:16)
+    at Module._compile (internal/modules/cjs/loader.js:1111:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/routes/index.js:6:24)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/app.js:8:21)
+    at Module._compile (internal/modules/cjs/loader.js:1147:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)
+    at Module.load (internal/modules/cjs/loader.js:996:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:896:14)
+    at Module.require (internal/modules/cjs/loader.js:1036:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (/home/student/leaderboard/bin/www:7:11)
+Fri, 22 May 2020 11:15:32 GMT express-session deprecated undefined resave option; provide resave option at routes/index.js:12:12
+Fri, 22 May 2020 11:15:32 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at routes/index.js:12:12

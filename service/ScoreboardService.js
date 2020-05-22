@@ -1,8 +1,8 @@
 const Scoreboard = require('../models/Scoreboard');
 
-const select = async (orderByColumn = 'topScore', order = 'DESC', game) => {
+const select = async (orderByColumn = 'topScore', order = 'DESC', game = 'All') => {
   const whereStatement = {};
-  if (game !== undefined && game !== 'All') {
+  if (game !== 'All') {
     whereStatement.game = game;
   }
   const results = await Scoreboard.findAll({

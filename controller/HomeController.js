@@ -8,7 +8,7 @@ const scoreboard = (req, res) => {
       title: 'Leaderboard',
       scoreboard: data,
       loggedIn,
-      game,
+      game: game || 'All',
     });
   });
 };
