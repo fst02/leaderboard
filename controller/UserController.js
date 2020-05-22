@@ -76,13 +76,13 @@ const logOut = async (req, res) => {
 };
 
 const showUserProfile = async (req, res) => {
-  const results = await User.findAll({
+  const user = await User.findOne({
     where: { id: req.session.userId },
   });
   const loggedIn = req.session.loggedIn === true;
   res.render('profile', {
     loggedIn,
-    user: results[0],
+    user: JSON.parse(JSON.stringify(user)),
   });
 };
 

@@ -21,6 +21,7 @@ app.engine('hbs', hbs({
   helpers: {
     selectedIfEqual: (value, option) => (value === option ? 'selected' : ''),
   },
+  allowProtoMethodsByDefault: true,
 }));
 
 app.use(logger('dev'));
