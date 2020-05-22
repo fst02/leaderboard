@@ -86,6 +86,19 @@ const showUserProfile = async (req, res) => {
   });
 };
 
+const updateUserProfile = async (req, res) => {
+  const user = await User.findOne({
+    where: { id: req.session.userId },
+  });
+  if (user.password === req.body.currentPassword) {
+    await User.update(
+      { introduction: req.body.introduction },
+      { where: { id: user.id } },
+    );
+  }
+  res.redirect('/myprofile');
+};
+
 module.exports = {
   create,
   register,
@@ -93,4 +106,5 @@ module.exports = {
   logIn,
   logOut,
   showUserProfile,
+  updateUserProfile,
 };
