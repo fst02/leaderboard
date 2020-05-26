@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const User = require('../models/User');
 
 module.exports = {
@@ -29,6 +31,11 @@ module.exports = {
     });
     let { avatar } = user;
     if (req.file) {
+      const absolutePath = path.join(__dirname, '../public/images/', user.avatar);
+      fs.unlink(absolutePath, (err) => {
+        if (err) throw err;
+        console.log('File deleted!');
+      });
       avatar = req.file.filename;
     }
     let { password } = user;
@@ -47,5 +54,4 @@ module.exports = {
     }
     res.redirect('/profile/show');
   },
-
 };
