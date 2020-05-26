@@ -2,9 +2,10 @@ const express = require('express');
 const multer = require('multer');
 const session = require('express-session');
 
-const UserController = require('../controller/UserController');
-const HomeController = require('../controller/HomeController');
-const User = require('../models/User');
+const AuthController = require('../controllers/AuthController');
+const ProfileController = require('../controllers/ProfileController');
+const RegistrationController = require('../controllers/RegistrationController');
+const HomeController = require('../controllers/HomeController');
 
 const upload = multer({ dest: 'public/images/' });
 
@@ -12,26 +13,21 @@ const router = express.Router();
 
 router.use(session({
   secret: 'nagyon titkos',
+  resave: false,
+  saveUninitialized: true,
 }));
+
 router.get('/', HomeController.scoreboard);
-router.get('/verify', UserController.verify);
-router.post('/register', upload.single('imageUpload'), UserController.register);
-router.get('/register', (req, res) => {
-  res.render('register');
-});
-router.post('/', UserController.logIn);
-router.get('/logout', UserController.logOut);
-router.get('/myprofile', UserController.showUserProfile);
-router.get('/editprofile', async (req, res) => {
-  const loggedIn = req.session.loggedIn === true;
-  const user = await User.findOne({
-    where: { id: req.session.userId },
-  });
-  res.render('editProfile', {
-    loggedIn,
-    user: JSON.parse(JSON.stringify(user)),
-  });
-});
-router.post('/editprofile', upload.none(), UserController.updateUserProfile);
+
+router.get('/registration/show', RegistrationController.show);
+router.post('/registration/register', upload.single('imageUpload'), RegistrationController.register);
+router.get('/registration/verify', RegistrationController.verify);
+
+router.post('/auth/login', AuthController.logIn);
+router.get('/auth/logout', AuthController.logOut);
+
+router.get('/profile/show', ProfileController.show);
+router.get('/profile/edit', ProfileController.edit);
+router.post('/profile/update', upload.none(), ProfileController.update);
 
 module.exports = router;

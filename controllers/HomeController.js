@@ -1,4 +1,4 @@
-const ScoreboardService = require('../service/ScoreboardService');
+const ScoreboardService = require('../services/ScoreboardService');
 
 const scoreboard = (req, res) => {
   const { order, game, orderByColumn } = req.query;
