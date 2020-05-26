@@ -30,6 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/dependencies/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 app.use('/dependencies/jquery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
+app.use('/dependencies/ckeditor', express.static(path.join(__dirname, 'node_modules/@ckeditor/ckeditor5-build-classic/build')));
 
 app.use('/', indexRouter);
 

@@ -31,11 +31,16 @@ module.exports = {
     if (req.file) {
       avatar = req.file.filename;
     }
+    let { password } = user;
+    if (req.body.newPassword === req.body.passwordRepeat && req.body.newPassword) {
+      password = req.body.newPassword;
+    }
     if (user.password === req.body.currentPassword) {
       await User.update(
         {
           introduction: req.body.introduction,
           avatar,
+          password,
         },
         { where: { id: user.id } },
       );

@@ -20,9 +20,9 @@
   </div>
   <div class="form-group">
     <label for="introduction">Introduction</label>
-    <textarea class="form-control" form="editProfile" name="introduction" id="introduction" rows="5" cols="50">
-      {{user.introduction}}
-    </textarea><br>
+    <textarea id="introduction" name="introduction">
+      {{{user.introduction}}}
+    </textarea>
     <p>Password required for any changes</p>
     <button form="editProfile" type="button" class="btn btn-secondary">Cancel</button>
     <button form="editProfile" type="submit" class="btn btn-dark">Save</button>
