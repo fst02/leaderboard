@@ -27,9 +27,16 @@ module.exports = {
     const user = await User.findOne({
       where: { id: req.session.userId },
     });
+    let { avatar } = user;
+    if (req.file) {
+      avatar = req.file.filename;
+    }
     if (user.password === req.body.currentPassword) {
       await User.update(
-        { introduction: req.body.introduction },
+        {
+          introduction: req.body.introduction,
+          avatar,
+        },
         { where: { id: user.id } },
       );
     }
