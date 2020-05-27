@@ -31,11 +31,13 @@ module.exports = {
     });
     let { avatar } = user;
     if (req.file) {
-      const absolutePath = path.join(__dirname, '../public/images/', user.avatar);
-      fs.unlink(absolutePath, (err) => {
-        if (err) throw err;
-        console.log('File deleted!');
-      });
+      if (user.avatar) {
+        const absolutePath = path.join(__dirname, '../public/images/', user.avatar);
+        fs.unlink(absolutePath, (err) => {
+          if (err) throw err;
+          console.log('File deleted!');
+        });
+      }
       avatar = req.file.filename;
     }
     let { password } = user;
