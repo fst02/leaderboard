@@ -12,7 +12,7 @@ const targetUrl = '/';
 
 module.exports = {
   show: (req, res) => {
-    res.render('register', { validationError: req.session.error });
+    res.render('registration/show', { validationError: req.session.error });
     console.log(req.session.error);
   },
 
@@ -42,12 +42,16 @@ module.exports = {
         template({ token }),
       );
 
-      res.redirect(targetUrl);
+      res.redirect('/registration/success');
     } catch (err) {
       console.log(err);
       req.session.error = serializeError(err);
       res.redirect(303, '/registration/show');
     }
+  },
+
+  success: (req, res) => {
+    res.render('registration/success');
   },
 
   verify: async (req, res) => {

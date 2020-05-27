@@ -21,6 +21,7 @@ router.get('/', HomeController.scoreboard);
 
 router.get('/registration/show', RegistrationController.show);
 router.post('/registration/register', upload.single('imageUpload'), RegistrationController.register);
+router.get('/registration/success', RegistrationController.success);
 router.get('/registration/verify', RegistrationController.verify);
 
 router.post('/auth/login', AuthController.logIn);
@@ -29,5 +30,6 @@ router.get('/auth/logout', AuthController.logOut);
 router.get('/profile/show', ProfileController.show);
 router.get('/profile/edit', ProfileController.edit);
 router.post('/profile/update', upload.single('imageUpload'), ProfileController.update);
+
 
 module.exports = router;

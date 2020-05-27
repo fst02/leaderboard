@@ -8,7 +8,7 @@ module.exports = {
       where: { id: req.session.userId },
     });
     const loggedIn = req.session.loggedIn === true;
-    res.render('profile', {
+    res.render('profile/show', {
       loggedIn,
       user: JSON.parse(JSON.stringify(user)),
     });
@@ -19,7 +19,7 @@ module.exports = {
     const user = await User.findOne({
       where: { id: req.session.userId },
     });
-    res.render('editProfile', {
+    res.render('profile/edit', {
       loggedIn,
       user: JSON.parse(JSON.stringify(user)),
     });
