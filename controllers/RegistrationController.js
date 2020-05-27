@@ -2,6 +2,7 @@ const cryptoRandomString = require('crypto-random-string');
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
+const {serializeError, deserializeError} = require('serialize-error');
 const MailerService = require('../services/MailerService');
 const ValidationService = require('../services/ValidationService');
 const User = require('../models/User');
@@ -11,7 +12,8 @@ const targetUrl = '/';
 
 module.exports = {
   show: (req, res) => {
-    res.render('register');
+    res.render('register', { validationError: req.session.error });
+    console.log(req.session.error);
   },
 
   register: async (req, res) => {
@@ -43,7 +45,8 @@ module.exports = {
       res.redirect(targetUrl);
     } catch (err) {
       console.log(err);
-      res.render('error', { validationError: err });
+      req.session.error = serializeError(err);
+      res.redirect(303, '/registration/show');
     }
   },
 
@@ -59,5 +62,4 @@ module.exports = {
       console.log(`verify error: ${err}`);
     }
   },
-
 };

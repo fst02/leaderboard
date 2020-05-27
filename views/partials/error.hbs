@@ -1,0 +1,10 @@
+{{#if validationError}}
+<div class="alert alert-danger">
+    {{validationError.message}}
+    <ul>
+        {{#each validationError.errors}}
+        <li>{{this.message}}</li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
