@@ -1,0 +1,2 @@
+require('./seedScoreboard');
+require('./seedUsers');

@@ -12,7 +12,7 @@ const User = sequelize.define('users', {
     allowNull: false,
     validate: {
       notEmpty: true,
-      len: [5, 255],
+      len: [3, 255],
     },
   },
   email: {

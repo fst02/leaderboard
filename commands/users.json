@@ -1,0 +1,58 @@
+[
+  {
+    "nickname": "Dani",
+    "email": "dani@example.com",
+    "password": "secret",
+    "introduction": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at facilisis odio, sed cursus augue. Vestibulum et dui ac felis vestibulum tincidunt. Nulla venenatis mi quis turpis porttitor elementum. Duis pharetra magna sem, sed semper felis sollicitudin sed. Nulla vel fermentum augue. Proin at libero eu nisi auctor pretium non sed tortor. Suspendisse a nisl sed quam accumsan interdum. Donec consectetur, turpis ut vestibulum vehicula, elit metus aliquet ligula, eu blandit eros ipsum at nulla. Nulla facilisi. Sed in consequat nisl, eu egestas nibh. Mauris tempor at lectus at auctor. Vestibulum nibh risus, luctus interdum aliquam non, porta at nunc.",
+    "avatar": "gkdsyjftwileyfkgh",
+    "isVerified": true
+  },
+  {
+    "nickname": "Niki",
+    "email": "niki@example.com",
+    "password": "secret",
+    "introduction": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc rhoncus posuere purus, ac venenatis ipsum tristique non. Nulla rutrum aliquet laoreet. Suspendisse et odio a ligula commodo gravida. Suspendisse vel mattis nunc. Vestibulum dapibus lacus a neque fermentum, sed vulputate dolor elementum. Nullam sed tortor ullamcorper, egestas libero ac, scelerisque enim.",
+    "avatar": "oeluwykfghwjeshdg",
+    "isVerified": true
+  },
+  {
+    "nickname": "Péter",
+    "email": "peter@example.com",
+    "password": "secret",
+    "introduction": "Duis vitae dolor pulvinar, lacinia erat vel, pellentesque justo. Maecenas non eros et turpis sodales rhoncus sit amet et velit. Aenean nec est dapibus, vehicula purus ut, blandit ex. Nulla mauris leo, ornare sit amet dolor nec, porttitor sodales orci. Fusce quis metus vel elit bibendum tincidunt sit amet id velit. In vitae lectus nulla. Cras quis metus at lectus feugiat tristique at a dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In fringilla vitae nunc vel lobortis. Morbi lobortis, dolor ut laoreet fermentum, enim nunc molestie nisl, ut pretium augue lectus maximus sapien.",
+    "avatar": null,
+    "isVerified": true
+  },
+  {
+    "nickname": "Ada",
+    "email": "ada@example.com",
+    "password": "secret",
+    "introduction": "Etiam vel mollis leo, non sollicitudin felis. Quisque ornare scelerisque velit, vitae rutrum sem imperdiet sit amet. Nulla gravida egestas egestas. Proin ac arcu at turpis ullamcorper vulputate. Praesent ornare, dolor sit amet laoreet sodales, mi dolor sodales risus, a pharetra nunc erat ac diam. Pellentesque eleifend aliquet purus, non fermentum tellus. Nam ultrices rutrum dui, varius bibendum leo tempor vel. Nam dui urna, vehicula at ante a, mollis suscipit eros.",
+    "avatar": null,
+    "isVerified": true
+  },
+  {
+    "nickname": "Olga",
+    "email": "olga@example.com",
+    "password": "secret",
+    "introduction": "Fusce lorem turpis, tristique at lorem id, ultrices faucibus mi. Nullam eu porta massa, et sollicitudin nisl. Integer commodo lacus at turpis ultricies dictum. Mauris molestie nec lacus in scelerisque. Proin ac felis volutpat, ultrices elit sed, suscipit erat. Duis dignissim et neque quis molestie. Mauris maximus, orci id aliquam pulvinar, neque lorem lacinia augue, maximus rhoncus justo mauris a nisl. Pellentesque luctus dolor ut est tempus, in sagittis neque pharetra. Phasellus non felis non orci laoreet egestas et non justo. Vivamus vitae eros vel arcu faucibus bibendum in sit amet massa. Integer pharetra ante at commodo hendrerit. Donec cursus, turpis eu eleifend tincidunt, sem lectus tincidunt diam, a rutrum tortor ligula sed leo. In eget placerat eros. Aliquam tristique faucibus ante, ac mattis dolor faucibus a.",
+    "avatar": null,
+    "isVerified": false
+  },
+  {
+    "nickname": "Bendegúz",
+    "email": "bendeguz@example.com",
+    "password": "secret",
+    "introduction": "Fusce ac ornare nunc, non pretium massa. Nulla lacinia ipsum quis cursus vestibulum. Vivamus aliquam est ac nibh suscipit efficitur. Sed egestas arcu dolor. Nullam interdum sollicitudin dui, lacinia malesuada augue. Sed placerat malesuada turpis, ac blandit nisl laoreet quis. Maecenas faucibus massa mauris, vitae tempus neque consequat at. Donec venenatis quam ut lorem tempus bibendum. Sed quis ipsum posuere diam ultricies mollis. Morbi scelerisque nisl dui, sit amet varius neque finibus a. Fusce tempus risus ut nisi tincidunt, eget egestas mi suscipit.",
+    "avatar": null,
+    "isVerified": false
+  },
+  {
+    "nickname": "Ricsi",
+    "email": "ricsi@example.com",
+    "password": "secret",
+    "introduction": "Integer dapibus molestie condimentum. Mauris finibus odio ut odio sodales, a congue mi porta. Donec tempor massa at semper sagittis. Mauris luctus pharetra elit in viverra. Vivamus scelerisque blandit felis. Vivamus tincidunt ligula ligula. Nunc ac magna nisl. Nulla nec justo augue. Sed eu suscipit enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent vitae varius metus. Quisque mollis at augue ut ullamcorper. Sed vitae orci diam.",
+    "avatar": null,
+    "isVerified": false
+  }
+]

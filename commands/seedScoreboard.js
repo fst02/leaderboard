@@ -1,5 +1,5 @@
-const Scoreboard = require('../models/Scoreboard.js');
-const importData = require('./data.json');
+const Scoreboard = require('../models/Scoreboard');
+const importData = require('./scoreboard.json');
 
 const seedScoreboard = async () => {
   importData.forEach((data) => {
