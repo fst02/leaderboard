@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 
@@ -27,6 +28,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/dependencies/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 app.use('/dependencies/jquery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));

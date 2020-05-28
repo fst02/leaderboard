@@ -5,6 +5,8 @@ const targetUrl = '/';
 module.exports = {
   logIn: async (req, res) => {
     try {
+      console.log(req.body.email);
+      console.log(req.body.password);
       const user = await User.findOne({
         where: { email: req.body.email, password: req.body.password },
       });
@@ -12,11 +14,13 @@ module.exports = {
         req.session.loggedIn = true;
         req.session.userId = user.id;
         req.session.nickname = user.nickname;
-        res.redirect(targetUrl);
+        res.send('confirmed');
+      } else {
+        throw new Error('Invalid email/password or not verified user');
       }
     } catch (err) {
       console.log(`Login error: ${err}`);
-      res.send('Erre születni kell.');
+      res.send(` ${err}`);
     }
   },
 
@@ -24,5 +28,4 @@ module.exports = {
     req.session.loggedIn = false;
     res.redirect(targetUrl);
   },
-
 };
