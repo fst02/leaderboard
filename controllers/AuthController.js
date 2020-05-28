@@ -11,6 +11,7 @@ module.exports = {
       if (user && user.isVerified === true) {
         req.session.loggedIn = true;
         req.session.userId = user.id;
+        req.session.nickname = user.nickname;
         res.redirect(targetUrl);
       }
     } catch (err) {

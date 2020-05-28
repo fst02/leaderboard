@@ -10,6 +10,7 @@ module.exports = {
     const loggedIn = req.session.loggedIn === true;
     res.render('profile/show', {
       loggedIn,
+      nickname: req.session.nickname,
       user: JSON.parse(JSON.stringify(user)),
     });
   },
@@ -21,6 +22,7 @@ module.exports = {
     });
     res.render('profile/edit', {
       loggedIn,
+      nickname: req.session.nickname,
       user: JSON.parse(JSON.stringify(user)),
     });
   },

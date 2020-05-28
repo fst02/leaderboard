@@ -9,6 +9,7 @@ const scoreboard = (req, res) => {
       scoreboard: data,
       loggedIn,
       game: game || 'All',
+      nickname: req.session.nickname,
     });
   });
 };
