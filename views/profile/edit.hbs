@@ -15,8 +15,8 @@
     <input type="password" class="form-control" id="passwordRepeat" name="passwordRepeat" placeholder="Repeat password">
   </div>
   <div class="form-group">
-    {{#if user.avatar}}
       <img alt="User Pic" src="images/{{user.avatar}}" id="profile-image" class="rounded-circle img-responsive" width="120px"><br>
+    {{#if user.avatar}}
     {{else}}
       <img alt="User Pic" src="avatar.jpg" id="profile-image" class="rounded-circle img-responsive" width="120px"><br>
     {{/if}}
