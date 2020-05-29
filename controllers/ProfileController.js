@@ -1,4 +1,5 @@
 const fs = require('fs');
+const hasha = require('hasha');
 const path = require('path');
 const User = require('../models/User');
 
@@ -44,9 +45,9 @@ module.exports = {
     }
     let { password } = user;
     if (req.body.newPassword === req.body.passwordRepeat && req.body.newPassword) {
-      password = req.body.newPassword;
+      password = hasha(req.body.newPassword);
     }
-    if (user.password === req.body.currentPassword) {
+    if (user.password === hasha(req.body.currentPassword)) {
       await User.update(
         {
           introduction: req.body.introduction,

@@ -2,6 +2,7 @@ const cryptoRandomString = require('crypto-random-string');
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
+const hasha = require('hasha');
 const url = require('url');
 const { serializeError } = require('serialize-error');
 const MailerService = require('../services/MailerService');
@@ -35,6 +36,7 @@ module.exports = {
 
       const token = cryptoRandomString({ length: 15, type: 'url-safe' });
 
+      userData.password = hasha(req.body.password);
       const user = await User.create(userData);
       const expiredAt = new Date();
       expiredAt.setHours(expiredAt.getHours() + 24);

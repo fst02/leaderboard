@@ -1,3 +1,4 @@
+const hasha = require('hasha');
 const User = require('../models/User');
 
 const targetUrl = '/';
@@ -5,10 +6,8 @@ const targetUrl = '/';
 module.exports = {
   logIn: async (req, res) => {
     try {
-      console.log(req.body.email);
-      console.log(req.body.password);
       const user = await User.findOne({
-        where: { email: req.body.email, password: req.body.password },
+        where: { email: req.body.email, password: hasha(req.body.password) },
       });
       if (user && user.isVerified === true) {
         req.session.loggedIn = true;
