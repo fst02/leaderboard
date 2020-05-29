@@ -1,4 +1,5 @@
 <h1>Edit profile</h1>
+{{> error validationError=validationError }}
 <form id="editProfile" method="POST" action="profile/update" enctype="multipart/form-data">
   <div class="form-group">
     <label for="currentPassword">Current password</label>
@@ -25,7 +26,11 @@
   <div class="form-group">
     <label for="introduction">Introduction</label>
     <textarea id="introduction" name="introduction">
-      {{{user.introduction}}}
+      {{#if introduction}}
+        {{{introduction}}}
+      {{else}}
+        {{{user.introduction}}}
+      {{/if}}
     </textarea>
     <p>Password required for any changes</p>
     <a href="profile/show" class="btn btn-secondary">Cancel</a>

@@ -27,8 +27,8 @@ module.exports = {
   register: async (req, res) => {
     try {
       let filename = null;
-      if (req.file !== undefined) {
-        const buffer = readChunk.sync(`/home/student/leaderboard/public/images/${req.file.filename}`, 0, 12);
+      if (req.file) {
+        const buffer = readChunk.sync(path.join(__dirname, `../public/images/${req.file.filename}`), 0, 12);
         if (imageType(buffer).mime.includes('image')) {
           filename = req.file.filename;
         }
