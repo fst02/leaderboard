@@ -30,6 +30,6 @@ router.get('/auth/logout', AuthController.logOut);
 router.get('/profile/show', ProfileController.show);
 router.get('/profile/edit', ProfileController.edit);
 router.post('/profile/update', upload.single('imageUpload'), ProfileController.update);
-
+router.delete('/profile/edit/deleteImage', ProfileController.delete);
 
 module.exports = router;

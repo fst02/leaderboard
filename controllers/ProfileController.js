@@ -35,6 +35,21 @@ module.exports = {
     });
   },
 
+  delete: async (req, res) => {
+    try {
+      const user = await User.findOne({ where: { id: req.session.userId } });
+      const absolutePath = path.join(__dirname, '../public/images/', user.avatar);
+      fs.unlink(absolutePath, (err) => {
+        if (err) console.log(err.message);
+      });
+      await User.update({ avatar: null }, { where: { id: user.id } });
+      res.send('OK');
+    } catch (err) {
+      console.log(err);
+      res.send('Image delete error');
+    }
+  },
+
   update: async (req, res) => {
     try {
       const user = await User.findOne({

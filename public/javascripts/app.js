@@ -31,3 +31,18 @@ function logIn() { // eslint-disable-line no-unused-vars
       }
     });
 }
+
+function deleteImage() { // eslint-disable-line no-unused-vars
+  fetch('profile/edit/deleteImage', { // eslint-disable-line no-undef
+    method: 'DELETE',
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      if (data === 'OK') {
+        location.reload(); // eslint-disable-line no-undef, no-restricted-globals
+      } else {
+        document.getElementById('error').classList.remove('d-none'); // eslint-disable-line no-undef
+        document.getElementById('error').innerHTML = data; // eslint-disable-line no-undef
+      }
+    });
+}
