@@ -20,6 +20,7 @@ app.engine('hbs', hbs({
   layoutsDir: path.join(__dirname, 'views'),
   helpers: {
     selectedIfEqual: (value, option) => (value === option ? 'selected' : ''),
+    increment: (value) => parseInt(value, 10) + 1,
   },
   allowProtoMethodsByDefault: true,
 }));
