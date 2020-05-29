@@ -1,6 +1,8 @@
 const fs = require('fs');
 const hasha = require('hasha');
 const path = require('path');
+const readChunk = require('read-chunk');
+const imageType = require('image-type');
 const User = require('../models/User');
 
 module.exports = {

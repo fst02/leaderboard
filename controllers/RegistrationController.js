@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
 const hasha = require('hasha');
+const readChunk = require('read-chunk');
+const imageType = require('image-type');
 const url = require('url');
 const { serializeError } = require('serialize-error');
 const MailerService = require('../services/MailerService');
@@ -19,7 +21,6 @@ module.exports = {
       email,
       introduction,
     });
-    console.log(req.session.error);
     req.session.error = null;
   },
 
@@ -27,7 +28,10 @@ module.exports = {
     try {
       let filename = null;
       if (req.file !== undefined) {
-        filename = req.file.filename;
+        const buffer = readChunk.sync(`/home/student/leaderboard/public/images/${req.file.filename}`, 0, 12);
+        if (imageType(buffer).mime.includes('image')) {
+          filename = req.file.filename;
+        }
       }
       const userData = Object.assign(req.body, { avatar: filename });
       if (userData.password !== userData.passwordRepeat) {
