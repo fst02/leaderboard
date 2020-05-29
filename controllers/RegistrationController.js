@@ -14,6 +14,7 @@ module.exports = {
   show: (req, res) => {
     res.render('registration/show', { validationError: req.session.error });
     console.log(req.session.error);
+    req.session.error = null;
   },
 
   register: async (req, res) => {
@@ -61,7 +62,7 @@ module.exports = {
       if (result.length !== 0 && result[0].expiredAt >= currentDate) {
         ValidationService.setToVerified(result[0].userId);
       }
-      res.redirect(targetUrl);
+      res.render('registration/confirmed');
     } catch (err) {
       console.log(`verify error: ${err}`);
     }

@@ -12,8 +12,8 @@ ClassicEditor
 
 
 function logIn() { // eslint-disable-line no-unused-vars
-  const email = document.getElementById('email').value; // eslint-disable-line no-undef
-  const password = document.getElementById('password').value; // eslint-disable-line no-undef
+  const email = document.getElementById('signInEmail').value; // eslint-disable-line no-undef
+  const password = document.getElementById('signInPassword').value; // eslint-disable-line no-undef
   fetch('auth/login', { // eslint-disable-line no-undef
     method: 'POST',
     headers: {
@@ -27,7 +27,7 @@ function logIn() { // eslint-disable-line no-unused-vars
         document.getElementById('error').classList.remove('d-none'); // eslint-disable-line no-undef
         document.getElementById('error').innerHTML = data; // eslint-disable-line no-undef
       } else {
-        location.reload(); // eslint-disable-line no-undef, no-restricted-globals
+        window.location.href = '/'; // eslint-disable-line no-undef
       }
     });
 }
