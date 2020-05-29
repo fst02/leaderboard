@@ -2,17 +2,22 @@ const cryptoRandomString = require('crypto-random-string');
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
+const url = require('url');
 const { serializeError } = require('serialize-error');
 const MailerService = require('../services/MailerService');
 const ValidationService = require('../services/ValidationService');
 const User = require('../models/User');
 const UserActivation = require('../models/UserActivation');
 
-const targetUrl = '/';
-
 module.exports = {
   show: (req, res) => {
-    res.render('registration/show', { validationError: req.session.error });
+    const { nickname, email, introduction } = req.query;
+    res.render('registration/show', {
+      validationError: req.session.error,
+      nickname,
+      email,
+      introduction,
+    });
     console.log(req.session.error);
     req.session.error = null;
   },
@@ -47,7 +52,14 @@ module.exports = {
     } catch (err) {
       console.log(err);
       req.session.error = serializeError(err);
-      res.redirect(303, '/registration/show');
+      res.redirect(303, url.format({
+        pathname: '/registration/show',
+        query: {
+          nickname: req.body.nickname,
+          email: req.body.email,
+          introduction: req.body.introduction,
+        },
+      }));
     }
   },
 

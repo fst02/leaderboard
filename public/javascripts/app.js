@@ -3,7 +3,7 @@ ClassicEditor
   .create(document.querySelector('#introduction')) // eslint-disable-line no-undef
   .then((editor) => {
     editor.editing.view.change((writer) => {
-      writer.setStyle('height', '500px', editor.editing.view.document.getRoot());
+      writer.setStyle('height', '300px', editor.editing.view.document.getRoot());
     });
   })
   .catch((error) => {

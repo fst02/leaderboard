@@ -3,11 +3,11 @@
 <form id="signUp" method="POST" action="registration/register" enctype="multipart/form-data">
   <div class="form-group">
     <label for="nickname">Nickname</label>
-    <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Enter nickname" required>
+    <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Enter nickname" value="{{nickname}}" required>
   </div>
   <div class="form-group">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" value="{{email}}" required>
   </div>
   <div class="form-group">
     <label for="password">Password</label>
@@ -24,8 +24,9 @@
   </div>
   <div class="form-group">
     <label for="introduction">Introduction (optional) </label>
-    <textarea class="form-control" form="signUp" name="introduction" id="introduction" rows="5" cols="50">
+    <textarea class="form-control" form="signUp" name="introduction" id="introduction">
+      {{introduction}}
     </textarea><br>
-    <button form="signUp" type="submit" class="btn btn-primary">Submit</button>
+    <button form="signUp" type="submit" class="btn btn-dark">Submit</button>
   </div>
 </form>
