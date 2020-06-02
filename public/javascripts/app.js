@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-undef
 ClassicEditor
-  .create(document.querySelector('#introduction')) // eslint-disable-line no-undef
+  .create(document.querySelector('#introduction'), { // eslint-disable-line no-undef
+    removePlugins: ['EasyImage', 'Image', 'ImageCaption', 'ImageToolbar', 'ImageStyle', 'ImageUpload', 'MediaEmbed'],
+  })
   .then((editor) => {
     editor.editing.view.change((writer) => {
       writer.setStyle('height', '300px', editor.editing.view.document.getRoot());
