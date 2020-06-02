@@ -43,6 +43,12 @@ app.use((req, res, next) => {
   next(createError(404));
 });
 
+app.use((err, req, res) => {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401).send('Invalid token');
+  }
+});
+
 // error handler
 app.use((err, req, res) => {
   // set locals, only providing error in development

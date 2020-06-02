@@ -1,25 +1,27 @@
 const express = require('express');
 const multer = require('multer');
 const session = require('express-session');
+const jwt = require('express-jwt');
 
 const AuthController = require('../controllers/AuthController');
 const ProfileController = require('../controllers/ProfileController');
 const RegistrationController = require('../controllers/RegistrationController');
 const HomeController = require('../controllers/HomeController');
 const ApiController = require('../controllers/ApiController');
+const secrets = require('../config/secrets.json');
 
 const upload = multer({ dest: 'public/images/' });
 
 const router = express.Router();
 
 router.use(session({
-  secret: 'nagyon titkos',
+  secret: secrets.sessionSecret,
   resave: false,
   saveUninitialized: true,
 }));
 
 router.get('/', HomeController.scoreboard);
-router.post('/api/saveScore', ApiController.saveScore);
+router.post('/api/saveScore', jwt({ secret: secrets.jwtSecret }), ApiController.saveScore);
 router.post('/api/authenticateUser', ApiController.authenticateUser);
 
 router.get('/registration/show', RegistrationController.show);
