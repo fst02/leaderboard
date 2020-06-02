@@ -10,9 +10,11 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       game: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       topScore: {
         type: Sequelize.INTEGER,

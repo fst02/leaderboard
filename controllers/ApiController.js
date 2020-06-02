@@ -6,8 +6,12 @@ const secrets = require('../config/secrets.json');
 
 module.exports = {
   saveScore: async (req, res) => {
-    const score = await Scoreboard.create(req.body);
-    res.json(score);
+    try {
+      const score = await Scoreboard.create(req.body);
+      res.json(score);
+    } catch (error) {
+      res.status(400).json(error);
+    }
   },
 
   authenticateUser: async (req, res) => {
