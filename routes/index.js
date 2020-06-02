@@ -6,6 +6,7 @@ const AuthController = require('../controllers/AuthController');
 const ProfileController = require('../controllers/ProfileController');
 const RegistrationController = require('../controllers/RegistrationController');
 const HomeController = require('../controllers/HomeController');
+const ApiController = require('../controllers/ApiController');
 
 const upload = multer({ dest: 'public/images/' });
 
@@ -18,6 +19,7 @@ router.use(session({
 }));
 
 router.get('/', HomeController.scoreboard);
+router.post('/api/saveScore', ApiController.saveScore);
 
 router.get('/registration/show', RegistrationController.show);
 router.post('/registration/register', upload.single('imageUpload'), RegistrationController.register);
