@@ -17,7 +17,7 @@
   <div class="form-group">
     {{#if user.avatar}}
       <img alt="User Pic" src="images/{{user.avatar}}" id="edit-image" class="img-responsive mb-3" width="240px">
-      <button type="button" class="btn-sm btn-danger m-3" onclick="javascript:deleteImage()">Delete image</button><br>
+      <button type="button" class="btn-sm btn-danger m-3" id="delete-image-button">Delete image</button><br>
     {{else}}
       <img alt="User Pic" src="avatar.jpg" id="edit-image" class="img-responsive" width="240px"><br>
     {{/if}}

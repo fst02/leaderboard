@@ -1,6 +1,8 @@
-// eslint-disable-next-line no-undef
+/* eslint-env browser */
+/* global ClassicEditor */
+
 ClassicEditor
-  .create(document.querySelector('#introduction'), { // eslint-disable-line no-undef
+  .create(document.querySelector('#introduction'), {
     removePlugins: ['EasyImage', 'Image', 'ImageCaption', 'ImageToolbar', 'ImageStyle', 'ImageUpload', 'MediaEmbed'],
   })
   .then((editor) => {
@@ -12,11 +14,10 @@ ClassicEditor
     console.error(error);
   });
 
-
-function logIn() { // eslint-disable-line no-unused-vars
-  const email = document.getElementById('signInEmail').value; // eslint-disable-line no-undef
-  const password = document.getElementById('signInPassword').value; // eslint-disable-line no-undef
-  fetch('auth/login', { // eslint-disable-line no-undef
+function logIn() {
+  const email = document.getElementById('signInEmail').value;
+  const password = document.getElementById('signInPassword').value;
+  fetch('auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -26,25 +27,28 @@ function logIn() { // eslint-disable-line no-unused-vars
     .then((response) => response.text())
     .then((data) => {
       if (data !== 'confirmed') {
-        document.getElementById('error').classList.remove('d-none'); // eslint-disable-line no-undef
-        document.getElementById('error').innerHTML = data; // eslint-disable-line no-undef
+        document.getElementById('error').classList.remove('d-none');
+        document.getElementById('error').innerHTML = data;
       } else {
-        window.location.href = '/'; // eslint-disable-line no-undef
+        window.location.href = '/';
       }
     });
 }
 
-function deleteImage() { // eslint-disable-line no-unused-vars
-  fetch('profile/edit/deleteImage', { // eslint-disable-line no-undef
+function deleteImage() {
+  fetch('profile/edit/deleteImage', {
     method: 'DELETE',
   })
     .then((response) => response.text())
     .then((data) => {
       if (data === 'OK') {
-        location.reload(); // eslint-disable-line no-undef, no-restricted-globals
+        window.location.reload();
       } else {
-        document.getElementById('error').classList.remove('d-none'); // eslint-disable-line no-undef
-        document.getElementById('error').innerHTML = data; // eslint-disable-line no-undef
+        document.getElementById('error').classList.remove('d-none');
+        document.getElementById('error').innerHTML = data;
       }
     });
 }
+
+document.getElementById('login-button').addEventListener('click', logIn);
+document.getElementById('delete-image-button').addEventListener('click', deleteImage);
