@@ -7,8 +7,27 @@ const secrets = require('../config/secrets.json');
 module.exports = {
   saveScore: async (req, res) => {
     try {
-      const score = await Scoreboard.create(req.body);
-      res.json(score);
+      let selectedScoreboard = await Scoreboard.findOne({
+        where: { game: req.body.game, name: req.body.name },
+      });
+      if (selectedScoreboard) {
+        selectedScoreboard.numberOfRounds += 1;
+        if (req.body.score) {
+          selectedScoreboard.numberOfWins += 1;
+        }
+        if (req.body.score > selectedScoreboard.topScore) {
+          selectedScoreboard.topScore = req.body.score;
+        }
+      } else {
+        selectedScoreboard = await Scoreboard.create(req.body);
+        selectedScoreboard.numberOfRounds = 1;
+        if (req.body.score) {
+          selectedScoreboard.numberOfWins = 1;
+        }
+        selectedScoreboard.topScore = req.body.score;
+      }
+      selectedScoreboard.save();
+      res.json(selectedScoreboard);
     } catch (error) {
       res.status(400).json(error);
     }
@@ -23,6 +42,15 @@ module.exports = {
       res.json({ token, user });
     } else {
       res.status(401).json({ error: 'Invalid email/password or not verified user' });
+    }
+  },
+
+  verifyToken: async (req, res) => {
+    try {
+      jwt.verify(req.body.token, secrets.jwtSecret);
+      res.json({ response: 'ok' });
+    } catch (err) {
+      res.json({ response: err.message });
     }
   },
 };

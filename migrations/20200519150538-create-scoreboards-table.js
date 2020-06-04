@@ -19,6 +19,9 @@ module.exports = {
       topScore: {
         type: Sequelize.INTEGER,
       },
+      numberOfWins: {
+        type: Sequelize.INTEGER,
+      },
       numberOfRounds: {
         type: Sequelize.INTEGER,
       },

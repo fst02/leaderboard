@@ -23,6 +23,7 @@ router.use(session({
 router.get('/', HomeController.scoreboard);
 router.post('/api/saveScore', jwt({ secret: secrets.jwtSecret }), ApiController.saveScore);
 router.post('/api/authenticateUser', ApiController.authenticateUser);
+router.post('/api/verifyToken', ApiController.verifyToken);
 
 router.get('/registration/show', RegistrationController.show);
 router.post('/registration/register', upload.single('imageUpload'), RegistrationController.register);

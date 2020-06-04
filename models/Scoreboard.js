@@ -29,6 +29,13 @@ const Scoreboard = sequelize.define('scoreboard', {
       isNumeric: true,
     },
   },
+  numberOfWins: {
+    type: Sequelize.INTEGER,
+    validate: {
+      notEmpty: true,
+      isNumeric: true,
+    },
+  },
   numberOfRounds: {
     type: Sequelize.INTEGER,
     validate: {
