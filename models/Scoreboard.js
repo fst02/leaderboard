@@ -43,6 +43,20 @@ const Scoreboard = sequelize.define('scoreboard', {
       isNumeric: true,
     },
   },
+  country: {
+    type: Sequelize.STRING,
+    validate: {
+      notEmpty: true,
+      len: [1, 255],
+    },
+  },
+  city: {
+    type: Sequelize.STRING,
+    validate: {
+      notEmpty: true,
+      len: [1, 255],
+    },
+  },
 });
 
 module.exports = Scoreboard;

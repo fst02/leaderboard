@@ -33,6 +33,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
+      country: {
+        type: Sequelize.STRING,
+      },
+      city: {
+        type: Sequelize.STRING,
+      },
     },
     {
       charset: 'utf8',

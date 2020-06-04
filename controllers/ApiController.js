@@ -3,10 +3,15 @@ const jwt = require('jsonwebtoken');
 const Scoreboard = require('../models/Scoreboard');
 const User = require('../models/User');
 const secrets = require('../config/secrets.json');
+const LocationService = require('../services/LocationService');
 
 module.exports = {
   saveScore: async (req, res) => {
     try {
+      const ip = req.ip.split(':').pop();
+      const location = LocationService.getLocationByIp(ip);
+      console.log(location);
+      const { country, city } = location;
       let selectedScoreboard = await Scoreboard.findOne({
         where: { game: req.body.game, name: req.body.name },
       });
@@ -26,10 +31,12 @@ module.exports = {
         }
         selectedScoreboard.topScore = req.body.score;
       }
+      selectedScoreboard.city = city;
+      selectedScoreboard.country = country;
       selectedScoreboard.save();
       res.json(selectedScoreboard);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(400).json(`${error}`);
     }
   },
 
