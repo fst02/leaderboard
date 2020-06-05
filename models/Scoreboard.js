@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const User = require('./User');
+const Games = require('./Game');
 
 const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
   host: 'localhost',
@@ -7,14 +8,6 @@ const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
 });
 
 const Scoreboard = sequelize.define('scoreboard', {
-  game: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      notEmpty: true,
-      len: [3, 255],
-    },
-  },
   topScore: {
     type: Sequelize.INTEGER,
     validate: {
@@ -54,5 +47,7 @@ const Scoreboard = sequelize.define('scoreboard', {
 
 User.hasMany(Scoreboard);
 Scoreboard.belongsTo(User);
+Games.hasMany(Scoreboard);
+Scoreboard.belongsTo(Games);
 
 module.exports = Scoreboard;
