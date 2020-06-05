@@ -1,10 +1,11 @@
 const User = require('../models/User');
 const importData = require('./users.json');
 
-const seedUsers = async () => {
-  importData.forEach((data) => {
-    User.create(data);
-  });
+module.exports = {
+  seedUsers: async () => {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const row of importData) {
+      await User.create(row);
+    }
+  },
 };
-
-seedUsers();

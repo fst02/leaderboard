@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const User = require('./User');
 
 const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
   host: 'localhost',
@@ -6,14 +7,6 @@ const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
 });
 
 const Scoreboard = sequelize.define('scoreboard', {
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    validate: {
-      notEmpty: true,
-      len: [3, 255],
-    },
-  },
   game: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -58,5 +51,7 @@ const Scoreboard = sequelize.define('scoreboard', {
     },
   },
 });
+
+User.hasMany(Scoreboard);
 
 module.exports = Scoreboard;

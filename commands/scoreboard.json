@@ -1,60 +1,60 @@
 [
   {
-    "name": "Józsi",
+    "userId": 7,
     "game": "Mario",
     "topScore": 100,
     "numberOfRounds": 20
   },
   {
-    "name": "Sanyi",
+    "userId": 1,
     "game": "Hangman",
     "topScore": 10,
     "numberOfRounds": 200
   },
   {
-    "name": "Peti",
+    "userId": 2,
     "game": "Tetris",
     "topScore": 13,
     "numberOfRounds": 13
   },
   {
-    "name": "Juli",
+    "userId": 2,
     "game": "Mario",
     "topScore": 420,
     "numberOfRounds": 1
   },
   {
-    "name": "Vero",
+    "userId": 3,
     "game": "Tetris",
     "topScore": 8,
     "numberOfRounds": 42
   },
   {
-    "name": "Eszter",
+    "userId": 4,
     "game": "Hangman",
     "topScore": 21,
     "numberOfRounds": 13
   },
   {
-    "name": "Irénke",
+    "userId": 4,
     "game": "Mario",
     "topScore": 7,
     "numberOfRounds": 1200
   },
   {
-    "name": "Vali",
+    "userId": 5,
     "game": "Tetris",
     "topScore": 42,
     "numberOfRounds": 420
   },
   {
-    "name": "Józsi",
+    "userId": 6,
     "game": "Mario",
     "topScore": 100,
     "numberOfRounds": 20
   },
   {
-    "name": "Józsi",
+    "userId": 7,
     "game": "Mario",
     "topScore": 100,
     "numberOfRounds": 20

@@ -8,8 +8,12 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
       },
-      name: {
-        type: Sequelize.STRING,
+      userId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id',
+        },
         allowNull: false,
       },
       game: {

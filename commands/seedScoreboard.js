@@ -1,10 +1,11 @@
 const Scoreboard = require('../models/Scoreboard');
 const importData = require('./scoreboard.json');
 
-const seedScoreboard = async () => {
-  importData.forEach((data) => {
-    Scoreboard.create(data);
-  });
+module.exports = {
+  seedScoreboard: async () => {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const row of importData) {
+      await Scoreboard.create(row);
+    }
+  },
 };
-
-seedScoreboard();
