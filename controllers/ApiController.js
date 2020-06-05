@@ -13,7 +13,7 @@ module.exports = {
       console.log(location);
       const { country, city } = location;
       let selectedScoreboard = await Scoreboard.findOne({
-        where: { game: req.body.game, name: req.body.name },
+        where: { game: req.body.game, userId: req.body.userId },
       });
       if (selectedScoreboard) {
         selectedScoreboard.numberOfRounds += 1;

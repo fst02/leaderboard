@@ -53,5 +53,6 @@ const Scoreboard = sequelize.define('scoreboard', {
 });
 
 User.hasMany(Scoreboard);
+Scoreboard.belongsTo(User);
 
 module.exports = Scoreboard;
