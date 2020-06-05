@@ -9,7 +9,7 @@ module.exports = {
   saveScore: async (req, res) => {
     try {
       const ip = req.ip.split(':').pop();
-      const location = LocationService.getLocationByIp(ip);
+      const location = await LocationService.getLocationByIp(ip);
       console.log(location);
       const { country, city } = location;
       let selectedScoreboard = await Scoreboard.findOne({
