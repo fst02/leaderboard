@@ -1,13 +1,12 @@
 const fs = require('fs');
 const hasha = require('hasha');
 const path = require('path');
-const readChunk = require('read-chunk');
-const imageType = require('image-type');
 const url = require('url');
 const { serializeError } = require('serialize-error');
 const User = require('../models/User');
 const Scoreboard = require('../models/Scoreboard');
 const Game = require('../models/Game');
+const ImageService = require('../services/ImageService');
 
 module.exports = {
   show: async (req, res) => {
@@ -62,19 +61,7 @@ module.exports = {
       const user = await User.findOne({
         where: { id: req.session.userId },
       });
-      let { avatar } = user;
-      if (req.file) {
-        const buffer = readChunk.sync(path.join(__dirname, `../public/images/${req.file.filename}`), 0, 12);
-        if (imageType(buffer).mime.includes('image')) {
-          avatar = req.file.filename;
-        }
-        if (user.avatar) {
-          const absolutePath = path.join(__dirname, '../public/images/', user.avatar);
-          fs.unlink(absolutePath, (err) => {
-            if (err) console.log(err.message);
-          });
-        }
-      }
+      const avatar = ImageService.changeImage(req.file, user.avatar);
       let { password } = user;
       if (req.body.newPassword === req.body.passwordRepeat && req.body.newPassword) {
         password = hasha(req.body.newPassword);
