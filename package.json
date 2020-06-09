@@ -7,7 +7,7 @@
     "watch": "nodemon ./bin/www",
     "watch-and-log": "npm run watch > logs/leaderboard.log 2>&1",
     "sequelize-cli": "sequelize-cli",
-    "db-reset": "sequelize-cli db:migrate:undo:all && sequelize db:migrate && node commands/seedDatabase.js"
+    "db-reset": "sequelize-cli db:migrate:undo:all && sequelize db:migrate && sequelize-cli db:seed:all"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^19.0.0",
