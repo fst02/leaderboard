@@ -6,16 +6,23 @@ const imageType = require('image-type');
 const url = require('url');
 const { serializeError } = require('serialize-error');
 const User = require('../models/User');
+const Scoreboard = require('../models/Scoreboard');
+const Game = require('../models/Game');
 
 module.exports = {
   show: async (req, res) => {
     const user = await User.findOne({
       where: { id: req.session.userId },
     });
+    const userScores = await Scoreboard.findAll({
+      where: { userId: req.session.userId },
+      include: [User, Game],
+    });
     const loggedIn = req.session.loggedIn === true;
     res.render('profile/show', {
       loggedIn,
       nickname: req.session.nickname,
+      userScores: JSON.parse(JSON.stringify(userScores)),
       user: JSON.parse(JSON.stringify(user)),
     });
   },
