@@ -10,10 +10,9 @@ module.exports = {
     try {
       const ip = req.ip.split(':').pop();
       const location = await LocationService.getLocationByIp(ip);
-      console.log(location);
       const { country, city } = location;
       let selectedScoreboard = await Scoreboard.findOne({
-        where: { game: req.body.game, userId: req.body.userId },
+        where: { gameId: req.body.gameId, userId: req.user.userId },
       });
       if (selectedScoreboard) {
         selectedScoreboard.numberOfRounds += 1;
@@ -24,7 +23,8 @@ module.exports = {
           selectedScoreboard.topScore = req.body.score;
         }
       } else {
-        selectedScoreboard = await Scoreboard.create(req.body);
+        const saveData = Object.assign(req.body, { userId: req.user.userId });
+        selectedScoreboard = await Scoreboard.create(saveData);
         selectedScoreboard.numberOfRounds = 1;
         if (req.body.score) {
           selectedScoreboard.numberOfWins = 1;
@@ -54,8 +54,9 @@ module.exports = {
 
   verifyToken: async (req, res) => {
     try {
-      jwt.verify(req.body.token, secrets.jwtSecret);
-      res.json({ response: 'ok' });
+      const verify = jwt.verify(req.body.token, secrets.jwtSecret);
+      console.log(verify.userId);
+      res.json({ response: 'ok', userId: verify.userId });
     } catch (err) {
       res.json({ response: err.message });
     }

@@ -1,5 +1,6 @@
 const Scoreboard = require('../models/Scoreboard');
 const User = require('../models/User');
+const Game = require('../models/Game');
 
 const select = async (orderColumn = 'topScore', orderDirection = 'DESC', game = 'All') => {
   const whereStatement = {};
@@ -9,7 +10,7 @@ const select = async (orderColumn = 'topScore', orderDirection = 'DESC', game = 
   const results = await Scoreboard.findAll({
     where: whereStatement,
     order: [[orderColumn, orderDirection]],
-    include: User,
+    include: [User, Game],
   });
   const exportData = [];
   results.forEach((result) => {
@@ -17,7 +18,7 @@ const select = async (orderColumn = 'topScore', orderDirection = 'DESC', game = 
     exportData.push({
       id: result.id,
       name: result.user.nickname,
-      game: result.game,
+      game: result.game.game,
       topScore: result.topScore,
       numberOfRounds: result.numberOfRounds,
     });

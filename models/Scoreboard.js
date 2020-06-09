@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const User = require('./User');
-const Games = require('./Game');
+const Game = require('./Game');
 
 const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
   host: 'localhost',
@@ -47,7 +47,7 @@ const Scoreboard = sequelize.define('scoreboard', {
 
 User.hasMany(Scoreboard);
 Scoreboard.belongsTo(User);
-Games.hasMany(Scoreboard);
-Scoreboard.belongsTo(Games);
+Game.hasMany(Scoreboard);
+Scoreboard.belongsTo(Game);
 
 module.exports = Scoreboard;

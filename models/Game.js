@@ -1,11 +1,10 @@
 const Sequelize = require('sequelize');
-const Scoreboard = require('./Scoreboard');
 
 const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
   host: 'localhost',
   dialect: 'mysql',
 });
-const Games = sequelize.define('games', {
+const Game = sequelize.define('games', {
   game: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -16,4 +15,4 @@ const Games = sequelize.define('games', {
   },
 });
 
-module.exports = Games;
+module.exports = Game;
