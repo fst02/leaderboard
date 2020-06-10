@@ -10,7 +10,10 @@ const HomeController = require('../controllers/HomeController');
 const ApiController = require('../controllers/ApiController');
 const secrets = require('../config/secrets.json');
 
-const upload = multer({ dest: 'public/images/' });
+const upload = multer({
+  dest: 'public/images/',
+  limits: { fileSize: 2 * 1024 * 1024 },
+});
 
 const router = express.Router();
 
