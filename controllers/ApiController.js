@@ -8,33 +8,30 @@ const LocationService = require('../services/LocationService');
 module.exports = {
   saveScore: async (req, res) => {
     try {
+      let scoreboard = await Scoreboard.findOne({
+        where: { gameId: req.body.gameId, userId: req.user.userId },
+      });
+      if (!scoreboard) {
+        scoreboard = await Scoreboard.create({ gameId: req.body.gameId, userId: req.user.userId });
+        await scoreboard.reload();
+      }
+
+      scoreboard.numberOfRounds += 1;
+      if (req.body.score) {
+        scoreboard.numberOfWins += 1;
+      }
+      if (req.body.score > scoreboard.topScore) {
+        scoreboard.topScore = req.body.score;
+      }
+
       const ip = req.ip.split(':').pop();
       const location = await LocationService.getLocationByIp(ip);
       const { country, city } = location;
-      let selectedScoreboard = await Scoreboard.findOne({
-        where: { gameId: req.body.gameId, userId: req.user.userId },
-      });
-      if (selectedScoreboard) {
-        selectedScoreboard.numberOfRounds += 1;
-        if (req.body.score) {
-          selectedScoreboard.numberOfWins += 1;
-        }
-        if (req.body.score > selectedScoreboard.topScore) {
-          selectedScoreboard.topScore = req.body.score;
-        }
-      } else {
-        const saveData = Object.assign(req.body, { userId: req.user.userId });
-        selectedScoreboard = await Scoreboard.create(saveData);
-        selectedScoreboard.numberOfRounds = 1;
-        if (req.body.score) {
-          selectedScoreboard.numberOfWins = 1;
-        }
-        selectedScoreboard.topScore = req.body.score;
-      }
-      selectedScoreboard.city = city;
-      selectedScoreboard.country = country;
-      selectedScoreboard.save();
-      res.json(selectedScoreboard);
+      scoreboard.city = city;
+      scoreboard.country = country;
+
+      scoreboard.save();
+      res.json(scoreboard);
     } catch (error) {
       res.status(400).json(`${error}`);
     }

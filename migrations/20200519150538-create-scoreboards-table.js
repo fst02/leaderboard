@@ -22,12 +22,18 @@ module.exports = {
       },
       topScore: {
         type: Sequelize.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
       },
       numberOfWins: {
         type: Sequelize.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
       },
       numberOfRounds: {
         type: Sequelize.INTEGER,
+        defaultValue: 0,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -39,9 +45,11 @@ module.exports = {
       },
       country: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
       city: {
         type: Sequelize.STRING,
+        allowNull: true,
       },
     },
     {

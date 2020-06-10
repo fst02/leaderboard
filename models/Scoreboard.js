@@ -10,36 +10,24 @@ const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
 const Scoreboard = sequelize.define('scoreboard', {
   topScore: {
     type: Sequelize.INTEGER,
-    validate: {
-      notEmpty: true,
-      isNumeric: true,
-    },
   },
   numberOfWins: {
     type: Sequelize.INTEGER,
-    validate: {
-      notEmpty: true,
-      isNumeric: true,
-    },
   },
   numberOfRounds: {
     type: Sequelize.INTEGER,
-    validate: {
-      notEmpty: true,
-      isNumeric: true,
-    },
   },
   country: {
     type: Sequelize.STRING,
     validate: {
-      notEmpty: true,
+      notEmpty: false,
       len: [1, 255],
     },
   },
   city: {
     type: Sequelize.STRING,
     validate: {
-      notEmpty: true,
+      notEmpty: false,
       len: [1, 255],
     },
   },
