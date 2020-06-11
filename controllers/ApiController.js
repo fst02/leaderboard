@@ -41,9 +41,17 @@ module.exports = {
     const user = await User.findOne({
       where: { email: req.body.email, password: hasha(req.body.password), isVerified: true },
     });
+    const scoreboard = await Scoreboard.findOne({
+      where: { userId: user.id, gameId: req.body.gameId },
+    });
     if (user) {
       const token = jwt.sign({ userId: user.id }, secrets.jwtSecret);
-      res.json({ token, user });
+      res.json({
+        token,
+        user,
+        numberOfRounds: scoreboard.numberOfRounds,
+        numberOfWins: scoreboard.numberOfWins,
+      });
     } else {
       res.status(401).json({ error: 'Invalid email/password or not verified user' });
     }

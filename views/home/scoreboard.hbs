@@ -1,10 +1,10 @@
 <h1>{{title}}</h1>
 <form>
-  <select name="game" onchange="this.form.submit()">
+  <select name="gameId" onchange="this.form.submit()">
     <option value="All">All</option>
-    <option value="Hangman" {{selectedIfEqual game 'Hangman'}}>Hangman</option>
-    <option value="Tetris" {{selectedIfEqual game 'Tetris'}}>Tetris</option>
-    <option value="Mario" {{selectedIfEqual game 'Mario'}}>Mario</option>
+    <option value="1" {{selectedIfEqual gameId '1'}}>Hangman</option>
+    <option value="2" {{selectedIfEqual gameId '2'}}>Tetris</option>
+    <option value="3" {{selectedIfEqual gameId '3'}}>Mario</option>
   </select>
 </form>
 <table class="table table-striped table-dark">
@@ -13,23 +13,23 @@
       <th scope="col">#</th>
       <th scope="col">
         Nickname
-        <a href="?orderByColumn=name&order=desc&game={{game}}">↓</a>
-        <a href="?orderByColumn=name&order=asc&game={{game}}">↑</a>
+        <a href="?orderByColumn=name&order=desc&gameId={{gameId}}">↓</a>
+        <a href="?orderByColumn=name&order=asc&gameId={{gameId}}">↑</a>
       </th>
       <th scope="col">
         Game
-        <a href="?orderByColumn=game&order=desc&game={{game}}">↓</a>
-        <a href="?orderByColumn=game&order=asc&game={{game}}">↑</a>
+        <a href="?orderByColumn=game&order=desc&gameId={{gameId}}">↓</a>
+        <a href="?orderByColumn=game&order=asc&gameId={{gameId}}">↑</a>
       </th>
       <th scope="col">
         Top score
-        <a href="?orderByColumn=topScore&order=desc&game={{game}}">↓</a>
-        <a href="?orderByColumn=topScore&order=asc&game={{game}}">↑</a>
+        <a href="?orderByColumn=topScore&order=desc&gameId={{gameId}}">↓</a>
+        <a href="?orderByColumn=topScore&order=asc&gameId={{gameId}}">↑</a>
       </th>
       <th scope="col">
         Number of rounds
-        <a href="?orderByColumn=numberOfRounds&order=desc&game={{game}}">↓</a>
-        <a href="?orderByColumn=numberOfRounds&order=asc&game={{game}}">↑</a>
+        <a href="?orderByColumn=numberOfRounds&order=desc&gameId={{gameId}}">↓</a>
+        <a href="?orderByColumn=numberOfRounds&order=asc&gameId={{gameId}}">↑</a>
       </th>
     </tr>
   </thead>
@@ -47,8 +47,8 @@
 </table>
 <nav aria-label="Scoreboard navigation">
   <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="?offset={{previousOffset}}">Previous</a></li>    
-    <li class="page-item"><a class="page-link" href="?offset={{nextOffset}}">Next</a></li>
+    <li class="page-item"><a class="page-link" href="?gameId={{gameId}}&order={{order}}&orderByColumn={{orderByColumn}}&offset={{previousOffset}}">Previous</a></li>    
+    <li class="page-item"><a class="page-link" href="?gameId={{gameId}}&order={{order}}&orderByColumn={{orderByColumn}}&offset={{nextOffset}}">Next</a></li>
   </ul>
 </nav>
 <img src="avatar.jpg">
