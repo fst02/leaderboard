@@ -23,7 +23,7 @@ h1 {
   text-shadow: 2px 2px gray;
 }
 
-nav {
+#navbar {
   background-color: var(--nav-bg-color);
 }
 
@@ -40,18 +40,18 @@ li.nav-item > a.active {
   background-color: var(--li-bg-color)!important;
 }
 
-nav li:hover {
+#navbar li:hover {
   background-color: var(--li-bg-color);
 }
 
-nav ul {
+#navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-nav li {
+#navbar li {
   flex-grow: 0.2;
   border: 1px solid white;
   margin: 20px;
@@ -64,7 +64,7 @@ a.nav-link {
   text-align: center;
 }
 
-nav a {
+#navbar a {
   color: white;
   text-decoration: none;
 }
@@ -74,4 +74,24 @@ nav a {
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.page-link {
+  background-color: rgb(52,58,64);
+  color: white;
+}
+
+.page-link:hover {
+  background-color: darkgray;
+  color: rgb(52,58,64);
+}
+
+.pagination {
+  justify-content: flex-end;
+}
+
+#selectGame {
+  width: fit-content;
+  background-color: rgb(52,58,64);
+  color: white;
 }
