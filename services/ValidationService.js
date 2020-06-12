@@ -1,18 +1,23 @@
 const UserActivation = require('../models/UserActivation');
 const User = require('../models/User');
 
-const select = async (token) => {
-  const results = await UserActivation.findAll({
-    where: { token },
-  });
+const mapUserActivation = (userActivations) => {
   const exportData = [];
-  results.forEach((result) => {
+  userActivations.forEach((result) => {
     exportData.push({
       userId: result.userId,
       token: result.token,
       expiredAt: result.expiredAt,
     });
   });
+  return exportData;
+};
+
+const select = async (token) => {
+  const results = await UserActivation.findAll({
+    where: { token },
+  });
+  const exportData = mapUserActivation(results);
   return exportData;
 };
 

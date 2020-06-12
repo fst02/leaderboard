@@ -2,10 +2,10 @@ const Sequelize = require('sequelize');
 const User = require('./User');
 const Game = require('./Game');
 
-const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
-  host: 'localhost',
-  dialect: 'mysql',
-});
+const env = process.env.NODE_ENV || 'development';
+const config = require('../config/config.json')[env];
+
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 const Scoreboard = sequelize.define('scoreboard', {
   topScore: {

@@ -9,6 +9,9 @@ const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 
+const env = process.env.NODE_ENV || 'development';
+const config = require('./config/config.json')[env];
+
 const app = express();
 
 // view engine setup
@@ -22,6 +25,7 @@ app.engine('hbs', hbs({
   helpers: {
     selectedIfEqual: (value, option) => (value === option ? 'selected' : ''),
     increment: (value) => parseInt(value, 10) + 1,
+    getBaseUrl: config.baseUrl,
   },
   allowProtoMethodsByDefault: true,
 }));

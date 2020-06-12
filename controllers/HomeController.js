@@ -10,7 +10,6 @@ const scoreboard = (req, res) => {
     const offset = req.query.offset || '0';
     ScoreboardService.select(orderByColumn, order, gameId, offset).then((data) => {
       const loggedIn = req.session.loggedIn === true;
-      console.log(data);
       res.render('home/scoreboard', {
         title: 'Leaderboard',
         scoreboard: data,

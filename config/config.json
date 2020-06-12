@@ -4,7 +4,8 @@
     "password": "braininghub",
     "database": "leaderboard",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "baseUrl": "http://fullstack.braininghub.com:3000/"
   },
   "test": {
     "username": "root",

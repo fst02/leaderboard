@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize');
 const User = require('./User');
 
-const sequelize = new Sequelize('leaderboard', 'student', 'braininghub', {
-  host: 'localhost',
-  dialect: 'mysql',
-});
+const env = process.env.NODE_ENV || 'development';
+const config = require('../config/config.json')[env];
+
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 const UserActivation = sequelize.define('user_activations', {
   token: {
