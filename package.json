@@ -19,7 +19,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "express-handlebars": "^4.0.4",
-    "express-jwt": "^5.3.3",
+    "express-jwt": "^6.0.0",
     "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
     "hasha": "^5.2.0",
